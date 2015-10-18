@@ -1,6 +1,7 @@
 nbproject/
 example/result/
 tests/
+config/*.json
 .buildpath
 .project
 .settings/
