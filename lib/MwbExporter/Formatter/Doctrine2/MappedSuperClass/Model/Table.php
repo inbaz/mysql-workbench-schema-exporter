@@ -536,16 +536,15 @@ class Table extends BaseTable
                     ->write('')
                 ;
             } else {
-				# ForeignKeys are handled below, even local ones.
-#                $this->getDocument()->addLog('  Relation considered as "1 <=> 1"');
-#
-#                $writer
-#                    ->write('/**')
-#                    ->write(' * '.$this->getAnnotation('OneToOne', $annotationOptions))
-#                    ->write(' */')
-#                    ->write('protected $'.lcfirst($targetEntity).';')
-#                    ->write('')
-#                ;
+                $this->getDocument()->addLog('  Relation considered as "1 <=> 1"');
+
+                $writer
+                    ->write('/**')
+                    ->write(' * '.$this->getAnnotation('OneToOne', $annotationOptions))
+                    ->write(' */')
+                    ->write('protected $'.lcfirst($targetEntity).';')
+                    ->write('')
+                ;
             }
         }
 
