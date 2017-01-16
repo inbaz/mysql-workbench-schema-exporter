@@ -572,8 +572,10 @@ class Table extends BaseTable
             if ($foreign->isManyToOne()) {
                 $this->getDocument()->addLog('  Relation considered as "N <=> 1"');
 
+				$comment = $this->getComment();
                 $writer
                     ->write('/**')
+					->writeIf($comment, $comment)
                     ->write(' * '.$this->getAnnotation('ManyToOne', $annotationOptions))
                     ->write(' * '.$this->getJoins($foreign, false))
                     ->write(' */')
